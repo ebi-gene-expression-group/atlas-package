@@ -2,11 +2,12 @@ var webpack = require('webpack');
 var path = require('path');
 var CleanWebpackPlugin = require('clean-webpack-plugin');
 
-process.traceDeprecation = true;
+// If you get the message “loaderUtils.parseQuery() received a non-string value...” uncomment next line
+// process.traceDeprecation = true;
 
 module.exports = {
     entry: {
-        myComponent: ['whatwg-fetch', './html/render.js'],
+        myPackage: './html/render.js',
         dependencies: ['prop-types', 'react', 'react-dom', 'urijs']
     },
 
@@ -33,35 +34,12 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.css$/,
-                use: [
-                    {
-                        loader: 'style-loader'
-                    },
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            modules:false
-                        }
-                    }
-                ]
+                test: /\.css$/i,
+                use: [ 'style-loader', 'css-loader' ]
             },
             {
-                test: /\.less$/,
-                use: [
-                    {
-                        loader: 'style-loader'
-                    },
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            modules:false
-                        }
-                    },
-                    {
-                        loader: 'less-loader'
-                    }
-                ]
+                test: /\.less$/i,
+                use: [ 'style-loader', 'css-loader', 'less-loader' ]
             },
             {
                 test: /\.(jpe?g|png|gif)$/i,
@@ -96,7 +74,7 @@ module.exports = {
                 ]
             },
             {
-                test: /\.(svg)$/i,
+                test: /\.svg$/i,
                 use: [
                     {
                         loader: 'file-loader',
@@ -111,15 +89,9 @@ module.exports = {
                 ]
             },
             {
-                test: /\.jsx?$/,
-                // Place after node_modules packages owned by Expression Atlas to be transpiled, as they aren’t
-                // distributed pre-bundled or with a dist kind of folder
-                exclude: /node_modules\/(?!(expression-atlas|anatomogram|react-ebi-species))/,
-                use: [
-                    {
-                        loader: 'babel-loader'
-                    }
-                ]
+                test: /\.js$/i,
+                exclude: /node_modules\//,
+                use: 'babel-loader'
             }
         ]
     },
@@ -127,7 +99,7 @@ module.exports = {
     devServer: {
         // hot: true,      // CLI --hot is equivalent to this option, but it also enables the HMR plugin (see above)
         // hotOnly: true,  // Won’t inject modules if there’s a compilation error (without this a full page reload is
-                        // done after a successful build and we lose state)
+                           // done after a successful build and we lose state)
         port: 9000
     }
 };
