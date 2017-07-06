@@ -4,7 +4,7 @@
   "description": "",
   "main": "lib/index.js",
   "scripts": {
-    "build": "babel src -d lib --copy-files",
+    "build": "babel src -d lib --ignore '**/*.less' --copy-files",
     "prepublish": "npm run build"
   },
   "author": "",
