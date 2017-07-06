@@ -4,8 +4,9 @@
   "description": "My package does some neat things",
   "main": "lib/index.js",
   "scripts": {
-    "build": "babel src -d lib --ignore '**/*.less' --copy-files",
-    "prepublish": "npm run build"
+    "build": "babel src -d lib --ignore '**/*.less','**/*.sass' --copy-files",
+    "prepublish": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "Apache-2.0",
