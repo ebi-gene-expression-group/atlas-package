@@ -27,11 +27,47 @@ transpiled, all others will be copied through, `less` and `sass` files will be s
 ### `prepublish`
 Runs the `build` script.
 
-### `test`
+## Testing
 No test script is provided but it’s a very good idea to do so. In 
 [React EBI Species](https://github.com/wbazant/react-ebi-species) we are using [Jest](https://facebook.github.io/jest/)
 but [Mocha](https://mochajs.org/) is a good alternative and integrates well with Webpack using 
 [Mocha loader](https://github.com/webpack-contrib/mocha-loader).
+
+### Jest
+Add the following to your `package.json`:
+```
+"test": "jest"
+```
+
+If you want continuous integration and nice passing/failing badges, enable the repository in Travis CI and add the file 
+`.travis.yml` with the following:
+```
+language: node_js
+node_js:
+  - "6"
+```
+
+Now, with each push, Travis CI will run your tests and generate a report. You can display a test status badge going to 
+Travis CI, clicking on the badge and pasting the Markdown embed snippet on your `README.md`.
+
+To enable code coverage, it’s very similar. You need to install the `coveralls` package:
+```
+npm install --save-dev coveralls
+```
+
+Or:
+```
+yarn add --dev coveralls
+```
+
+Change your test script to this:
+```
+"test": "jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+```
+
+Now, every time that Jest is run, it will generate coverage information and send it to Coveralls for a coverage report. 
+If you go to Coveralls, you can also get a snippet to embed the coverage report shield on your readme file.
+
 
 ## What’s included?
 - [React 15.6 and PropTypes](https://facebook.github.io/react/)
