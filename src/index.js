@@ -1,3 +1,3 @@
-import MyComponent from './MyComponentww.js'
+import MyComponent from './MyComponent.js'
 
 export default MyComponent
