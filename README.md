@@ -6,7 +6,8 @@
 ```
 git clone https://github.com/gxa/atlas-package my-package
 cd new-package-name
-git remote set-url origin https://github.com/gxa/my-package.git
+rm -rf .git
+git remote add origin https://github.com/gxa/my-package.git
 ```
 Remember to create the new repository. The recommendation is to prefix the package name with “atlas-”.
 
