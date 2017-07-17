@@ -14,7 +14,7 @@ describe(`MyComponent`, () => {
   })
 
   test(`should mount in a full DOM`, () => {
-    expect(mount(<MyComponent />).find(`.foo`).length).toBe(1)
+    expect(mount(<MyComponent />).find(`.foo`)).toHaveLength(1)
   })
 
   test(`should render to static HTML`, () => {
