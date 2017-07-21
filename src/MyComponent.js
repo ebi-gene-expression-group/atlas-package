@@ -12,7 +12,7 @@ class MyComponent extends React.Component {
 }
 
 MyComponent.propTypes = {
-  atlasUrl: PropTypes.string.isRequired
+  atlasUrl: PropTypes.string
 }
 
 export default MyComponent
