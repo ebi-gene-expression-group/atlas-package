@@ -59,7 +59,7 @@ yarn add --dev coveralls
 
 Add the `posttest` script to `package.json`:
 ```
-"posttest": "jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+"posttest": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
 ```
 
 Now, every time that Jest is run, it will generate coverage information and send it to Coveralls for a coverage report. 
