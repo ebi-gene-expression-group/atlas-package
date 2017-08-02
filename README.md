@@ -5,7 +5,7 @@
 ### Clone this repository
 ```
 git clone https://github.com/gxa/atlas-package my-package
-cd new-package-name
+cd my-package
 rm -rf .git
 git init
 git remote add origin https://github.com/gxa/my-package.git
