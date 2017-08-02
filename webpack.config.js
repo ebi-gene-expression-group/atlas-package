@@ -24,11 +24,7 @@ module.exports = {
             name: 'dependencies',
             filename: 'vendorCommons.bundle.js',
             minChunks: Infinity     // Explicit definition-based split, see dependencies entry
-        }),
-        // new webpack.HotModuleReplacementPlugin(),
-        // enable HMR globally, necessary along with devServer.hot: true (see below) for HMR to work as expected 🤔
-        // new webpack.NamedModulesPlugin()
-        // prints more readable module names in the browser console on HMR updates
+        })
     ],
 
     module: {
@@ -97,9 +93,6 @@ module.exports = {
     },
 
     devServer: {
-        // hot: true,      // CLI --hot is equivalent to this option, but it also enables the HMR plugin (see above)
-        // hotOnly: true,  // Won’t inject modules if there’s a compilation error (without this a full page reload is
-                           // done after a successful build and we lose state)
         port: 9000
     }
 };
