@@ -26,8 +26,9 @@ prefer (e.g. `src/assets`, `src/img`). You may use [Less](http://lesscss.org/) o
 remember to compile them to regular CSS and `import` the latter. In short: files with the extension `js` will be 
 transpiled, all others will be copied through, `less` and `sass` files will be skipped.
 
-### `prepublish`
-Runs the `build` script.
+### `prepublishOnly`
+Runs the `build` script before `npm publish`. Only the `lib` directory is packaged, so make sure everything (including 
+assests such as CSS or images are there).
 
 ## Testing
 Basic test boilerplate is included with [Jest](https://facebook.github.io/jest/) and 
@@ -56,9 +57,9 @@ Or:
 yarn add --dev coveralls
 ```
 
-Change your test script to this:
+Add the `posttest` script to `package.json`:
 ```
-"test": "jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+"posttest": "jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
 ```
 
 Now, every time that Jest is run, it will generate coverage information and send it to Coveralls for a coverage report. 
@@ -69,7 +70,8 @@ If you go to Coveralls, you can also get a snippet to embed the coverage report 
 - [React 15.6 and PropTypes](https://facebook.github.io/react/)
 - [URI.js](https://medialize.github.io/URI.js/) for URL manipulation
 - [Babel](https://babeljs.io/) with presets `env`, `react` and the [object spread operator plugin](https://babeljs.io/docs/plugins/transform-object-rest-spread/) (see `.babelrc`)
-- [Webpack and Webpack dev server](https://webpack.js.org/) with [React Hot Loader](http://gaearon.github.io/react-hot-loader/)
+- [Webpack and Webpack dev server](https://webpack.js.org/)
+- [Jest](https://facebook.github.io/jest/) and [Enzyme](http://airbnb.io/enzyme/) for testing
 
 ## Polyfills
 No polyfills are included by default, but you might want one or both of these two:

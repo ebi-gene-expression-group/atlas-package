@@ -4,8 +4,8 @@
   "description": "My package does some neat things",
   "main": "lib/index.js",
   "scripts": {
-    "build": "babel src -d lib --ignore '**/*.less','**/*.sass' --copy-files",
-    "prepublish": "npm run build",
+    "build": "babel src -d lib --copy-files",
+    "prepublishOnly": "npm run build",
     "test": "jest --coverage"
   },
   "jest": {
