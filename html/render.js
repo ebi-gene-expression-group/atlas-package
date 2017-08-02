@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 
 import MyComponent from '../src/index.js'
 
-const render = function (options, target) {
+const render = (options, target) => {
   ReactDOM.render(<MyComponent {...options} />, document.getElementById(target))
 }
 
