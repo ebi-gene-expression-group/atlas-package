@@ -2,6 +2,9 @@
 
 ## Instructions
 
+***Be sure to be running [npm@4.0.0 or greater to use appropriately the script `prepublishOnly` in 
+`package.json`](https://github.com/npm/npm/issues/10074). You might want to use Node.js 7 or greater.***
+
 ### Clone this repository
 ```
 git clone https://github.com/gxa/atlas-package my-package
@@ -41,7 +44,7 @@ If you want CI and nice passing/failing badges, enable the repository in Travis 
 ```
 language: node_js
 node_js:
-  - "6"
+  - "8"
 ```
 
 Now, with each push, Travis CI will run your tests and generate a report. You can display a test status badge going to 
