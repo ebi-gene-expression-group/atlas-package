@@ -63,5 +63,5 @@ typings/
 .env
 
 # Build files
-dist/*
-lib/*
+dist/
+lib/
