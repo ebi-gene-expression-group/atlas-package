@@ -1,8 +1,8 @@
-# Template for Expression Atlas and Single Cell Atlas ES packages
+# Template for Gene Expression Atlas and Single Cell Expression Atlas NPM packages
 
 ## Instructions
 
-***Be sure to be running [npm@4.0.0 or greater to use appropriately the script `prepublishOnly` in 
+***Be sure to be running [npm@4.0.0 or greater to use appropriately the script `prepublishOnly` in
 `package.json`](https://github.com/npm/npm/issues/10074). You might want to use Node.js 7 or greater.***
 
 ### Clone this repository
@@ -16,30 +16,30 @@ git remote add origin https://github.com/gxa/my-package.git
 Remember to create the new repository. The recommendation is to prefix the package name with “atlas-”.
 
 ### Fill in package metadata
-Fill in the fields `name`, `description` and `repository`. As a general rule the packages are prefixed with 
+Fill in the fields `name`, `description` and `repository`. As a general rule the packages are prefixed with
 “expression-atlas-” or “sc-atlas-”. Finally, replace or remove `README.md`.
 
 ## Scripts
 
 ### `build`
-Creates a pre-compiled (i.e. Babel transpiled) version of the code from `src` to `lib`. The main entry of the package 
-is `lib/index.js`. The `lib` directory mimics the structure of `src` so all your exports should be in  `src/index.js`. 
-All other files (images, stylesheets, etc.) should be placed inside `src` following whatever directory structure you 
-prefer (e.g. `src/assets`, `src/img`). You may use [Less](http://lesscss.org/) or [Sass](http://sass-lang.com/) but 
-remember to compile them to regular CSS and `import` the latter. In short: files with the extension `js` will be 
+Creates a pre-compiled (i.e. Babel transpiled) version of the code from `src` to `lib`. The main entry of the package
+is `lib/index.js`. The `lib` directory mimics the structure of `src` so all your exports should be in  `src/index.js`.
+All other files (images, stylesheets, etc.) should be placed inside `src` following whatever directory structure you
+prefer (e.g. `src/assets`, `src/img`). You may use [Less](http://lesscss.org/) or [Sass](http://sass-lang.com/) but
+remember to compile them to regular CSS and `import` the latter. In short: files with the extension `js` will be
 transpiled, all others will be copied through, `less` and `sass` files will be skipped.
 
 ### `prepublishOnly`
-Runs the `build` script before `npm publish`. Only the `lib` directory is packaged, so make sure everything (including 
+Runs the `build` script before `npm publish`. Only the `lib` directory is packaged, so make sure everything (including
 assests such as CSS or images are there).
 
 ## Testing
-Basic test boilerplate is included with [Jest](https://facebook.github.io/jest/) and 
-[Enzyme](http://airbnb.io/enzyme/). Jest is a test runner, an assertion library and a snapshot tester, whereas Enzyme 
+Basic test boilerplate is included with [Jest](https://facebook.github.io/jest/) and
+[Enzyme](http://airbnb.io/enzyme/). Jest is a test runner, an assertion library and a snapshot tester, whereas Enzyme
 allows DOM testing. See the examples included in `__test__` to get an idea.
 
 ### Continuous integration
-If you want CI and nice passing/failing badges, enable the repository in Travis CI. Add the file 
+If you want CI and nice passing/failing badges, enable the repository in Travis CI. Add the file
 `.travis.yml` with the following:
 ```
 language: node_js
@@ -47,7 +47,7 @@ node_js:
   - "8"
 ```
 
-Now, with each push, Travis CI will run your tests and generate a report. You can display a test status badge going to 
+Now, with each push, Travis CI will run your tests and generate a report. You can display a test status badge going to
 Travis CI, clicking on the badge and pasting the Markdown embed snippet on your `README.md`.
 
 Enabling code coverage is very similar. You need to install the `coveralls` package:
@@ -65,7 +65,7 @@ Add the `posttest` script to `package.json`:
 "posttest": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
 ```
 
-Now, every time that Jest is run, it will generate coverage information and send it to Coveralls for a coverage report. 
+Now, every time that Jest is run, it will generate coverage information and send it to Coveralls for a coverage report.
 If you go to Coveralls, you can also get a snippet to embed the coverage report shield on your readme file.
 
 
