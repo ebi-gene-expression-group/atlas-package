@@ -21,7 +21,7 @@ Fill in the fields `name`, `description` and `repository`. As a general rule the
 
 ## Scripts
 
-### `build`
+### `dist`
 Creates a pre-compiled (i.e. Babel transpiled) version of the code from `src` to `lib`. The main entry of the package
 is `lib/index.js`. The `lib` directory mimics the structure of `src` so all your exports should be in  `src/index.js`.
 All other files (images, stylesheets, etc.) should be placed inside `src` following whatever directory structure you
