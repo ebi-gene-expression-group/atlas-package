@@ -70,7 +70,7 @@ If you go to Coveralls, you can also get a snippet to embed the coverage report 
 
 
 ## What’s included?
-- [React 15.6 and PropTypes](https://facebook.github.io/react/)
+- [React 16.0 and PropTypes](https://facebook.github.io/react/)
 - [URI.js](https://medialize.github.io/URI.js/) for URL manipulation
 - [Babel](https://babeljs.io/) with presets `env`, `react` and the [object spread operator plugin](https://babeljs.io/docs/plugins/transform-object-rest-spread/) (see `.babelrc`)
 - [Webpack and Webpack dev server](https://webpack.js.org/)
