@@ -24,6 +24,12 @@ module.exports = {
             name: 'dependencies',
             filename: 'vendorCommons.bundle.js',
             minChunks: Infinity     // Explicit definition-based split, see dependencies entry
+        }),
+        new webpack.DefinePlugin({
+            "process.env": {
+                NODE_ENV: process.env.NODE_ENV === 'production' ?
+                          JSON.stringify("production") : JSON.stringify("development")
+          }
         })
     ],
 
