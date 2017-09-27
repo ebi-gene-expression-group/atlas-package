@@ -26,9 +26,9 @@
     "url": "https://github.com/gxa/my-package.git"
   },
   "dependencies": {
-    "prop-types": "^15.5.10",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
+    "prop-types": "^15.6.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
     "urijs": "^1.18.12"
   },
   "devDependencies": {
