@@ -6,7 +6,7 @@
   "scripts": {
     "dist": "NODE_ENV=production webpack --optimize-minimize",
     "prepublishOnly": "rm -rf lib && babel src -d lib --copy-files",
-    "test": "jest --coverage"
+    "test": "jest --coverage --verbose"
   },
   "jest": {
     "moduleNameMapper": {
