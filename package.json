@@ -42,12 +42,12 @@
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
-    "clean-webpack-plugin": "^0.1.16",
+    "clean-webpack-plugin": "^0.1.17",
     "enzyme": "^3.0.0",
     "enzyme-adapter-react-16": "^1.0.0",
-    "jest": "^21.1.0",
+    "jest": "^21.2.1",
     "react-test-renderer": "^16.0.0",
     "webpack": "^3.6.0",
-    "webpack-dev-server": "^2.8.2"
+    "webpack-dev-server": "^2.9.1"
   }
 }
