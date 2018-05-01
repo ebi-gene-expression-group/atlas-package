@@ -33,14 +33,23 @@ transpiled, all others will be copied through, `less` and `sass` files will be s
 Runs the `build` script before `npm publish`. Only the `lib` directory is packaged, so make sure everything (including
 assests such as CSS or images are there).
 
+### `postversion`, `postpublish`
+After bumping the version with e.g. `npm version minor`, the package is automatically published and pushed, with all
+tags, so new versions can be published in a single step.
+
+### `testOnly`, `test`
+`npm test` runs all phases of the test lifecycle (i.e. `pretest`, `test` and `posttest`); `testOnly` is a script added
+for convenience in case you’ve added support for Coveralls. You won’t run the `posttest` phase and won’t get an error
+message.
+
 ## Testing
 Basic test boilerplate is included with [Jest](https://facebook.github.io/jest/) and
 [Enzyme](http://airbnb.io/enzyme/). Jest is a test runner, an assertion library and a snapshot tester, whereas Enzyme
 allows DOM testing. See the examples included in `__test__` to get an idea.
 
 ### Continuous integration
-If you want CI and nice passing/failing badges, enable the repository in Travis CI. Add the file
-`.travis.yml` with the following:
+If you want CI and nice passing/failing badges, enable the repository in [Travis CI](https://travis-ci.org/). Add the
+file `.travis.yml` with the following:
 ```
 language: node_js
 node_js:
@@ -50,7 +59,8 @@ node_js:
 Now, with each push, Travis CI will run your tests and generate a report. You can display a test status badge going to
 Travis CI, clicking on the badge and pasting the Markdown embed snippet on your `README.md`.
 
-Enabling code coverage is very similar. You need to install the `coveralls` package:
+Enabling code coverage is very similar. You need to enable your repository in [Coveralls](https://coveralls.io/) and
+install the `coveralls` package:
 ```
 npm install --save-dev coveralls
 ```
@@ -70,10 +80,10 @@ If you go to Coveralls, you can also get a snippet to embed the coverage report 
 
 
 ## What’s included?
-- [React 16.0 and PropTypes](https://facebook.github.io/react/)
+- [React 16.3 and PropTypes](https://facebook.github.io/react/)
 - [URI.js](https://medialize.github.io/URI.js/) for URL manipulation
 - [Babel](https://babeljs.io/) with presets `env`, `react` and the [object spread operator plugin](https://babeljs.io/docs/plugins/transform-object-rest-spread/) (see `.babelrc`)
-- [Webpack and Webpack dev server](https://webpack.js.org/)
+- [Webpack 3 and Webpack dev server 2](https://webpack.js.org/)
 - [Jest](https://facebook.github.io/jest/) and [Enzyme](http://airbnb.io/enzyme/) for testing
 
 ## Polyfills

@@ -7,7 +7,10 @@
     "dev": "webpack-dev-server -d",
     "dist": "NODE_ENV=production webpack --optimize-minimize",
     "prepublishOnly": "rm -rf lib && babel src -d lib --copy-files",
-    "test": "jest --coverage --verbose"
+    "testOnly": "jest --coverage --verbose",
+    "test": "npm run testOnly",
+    "postversion": "npm publish",
+    "postpublish": "git push && git push --tags"
   },
   "jest": {
     "moduleNameMapper": {
