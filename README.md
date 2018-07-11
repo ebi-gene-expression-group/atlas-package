@@ -37,10 +37,9 @@ assests such as CSS or images are there).
 After bumping the version with e.g. `npm version minor`, the package is automatically published and pushed, with all
 tags, so new versions can be published in a single step.
 
-### `testOnly`, `test`
-`npm test` runs all phases of the test lifecycle (i.e. `pretest`, `test` and `posttest`); `testOnly` is a script added
-for convenience in case you’ve added support for Coveralls. You won’t run the `posttest` phase and won’t get an error
-message.
+### `test`
+`npm test` runs all phases of the test lifecycle (i.e. `pretest`, `test` and `posttest`); in case you’ve added support
+for Coveralls you won’t likely want to run the `posttest` phase. If that’s the case just do `npx jest`.
 
 ## Testing
 Basic test boilerplate is included with [Jest](https://facebook.github.io/jest/) and
@@ -65,11 +64,6 @@ install the `coveralls` package:
 npm install --save-dev coveralls
 ```
 
-Or:
-```
-yarn add --dev coveralls
-```
-
 Add the `posttest` script to `package.json`:
 ```
 "posttest": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
@@ -80,10 +74,10 @@ If you go to Coveralls, you can also get a snippet to embed the coverage report 
 
 
 ## What’s included?
-- [React 16.3 and PropTypes](https://facebook.github.io/react/)
+- [React 16 and PropTypes](https://facebook.github.io/react/)
 - [URI.js](https://medialize.github.io/URI.js/) for URL manipulation
 - [Babel](https://babeljs.io/) with presets `env`, `react` and the [object spread operator plugin](https://babeljs.io/docs/plugins/transform-object-rest-spread/) (see `.babelrc`)
-- [Webpack 3 and Webpack dev server 2](https://webpack.js.org/)
+- [Webpack 4 with Webpack-Command and Webpack-Serve](https://webpack.js.org/)
 - [Jest](https://facebook.github.io/jest/) and [Enzyme](http://airbnb.io/enzyme/) for testing
 
 ## Polyfills
@@ -95,14 +89,17 @@ No polyfills are included by default, but you might want one or both of these tw
 ```
 npm install --save-dev whatwg-fetch babel-polyfill
 ```
-### Yarn
-```
-yarn add --dev whatwg-fetch babel-polyfill
-```
+
 Tweak your `webpack.config.js` to include them in your entry points:
 ```
 entry: {
-  myComponent: ['babel-polyfill', 'whatwg-fetch', './html/render.js']
+  myComponent: [`babel-polyfill`, `whatwg-fetch`, `./html/render.js`]
   ...
 }
+```
+
+## Run it on your browser
+Use Webpack-Serve:
+```
+npx webpack-serve ./webpack-serve.config.js
 ```
