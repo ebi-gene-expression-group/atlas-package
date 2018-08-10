@@ -101,5 +101,5 @@ entry: {
 ## Run it on your browser
 Use Webpack-Serve:
 ```
-npx webpack-serve ./webpack-serve.config.js
+npx webpack-serve
 ```
