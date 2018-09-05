@@ -2,8 +2,7 @@
 
 ## Instructions
 
-***Be sure to be running [npm@4.0.0 or greater to use appropriately the script `prepublishOnly` in
-`package.json`](https://github.com/npm/npm/issues/10074). You might want to use Node.js 7 or greater.***
+***Be sure to be running npm@4.0.0 or later. At least Node.js 8 LTS is strongly recommended.***
 
 ### Clone this repository
 ```
