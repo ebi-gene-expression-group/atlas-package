@@ -1,6 +1,10 @@
 # IntelliJ IDEA project files
 .idea/
 
+# OS X “Desktop Services” files
+.DS_Store
+.module-cache
+
 # https://github.com/github/gitignore/blob/master/Node.gitignore
 
 # Logs
