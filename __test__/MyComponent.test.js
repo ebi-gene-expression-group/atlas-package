@@ -1,3 +1,6 @@
+// If you get ReferenceError: regeneratorRuntime is not defined use this in your tests:
+// import '@babel/polyfill'
+
 import React from 'react'
 import renderer from 'react-test-renderer'
 import Enzyme from 'enzyme'
