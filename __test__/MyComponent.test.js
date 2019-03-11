@@ -1,19 +1,13 @@
 // If you get ReferenceError: regeneratorRuntime is not defined use this in your tests:
 // import '@babel/polyfill'
-
-import React from 'react'
 import renderer from 'react-test-renderer'
-import Enzyme from 'enzyme'
 import {shallow, mount, render} from 'enzyme'
-import Adapter from 'enzyme-adapter-react-16'
 
-import MyComponent from '../src/MyComponent.js'
-
-Enzyme.configure({ adapter: new Adapter() })
+import MyComponent from '../src/MyComponent'
 
 describe(`MyComponent`, () => {
   test(`should render without throwing an error`, () => {
-     expect(shallow(<MyComponent />).contains(<div className="foo">Bar</div>)).toBe(true)
+    expect(shallow(<MyComponent />).contains(<div className="foo">Bar</div>)).toBe(true)
   })
 
   test(`should be selectable by class "foo"`, () => {
