@@ -1,5 +1,5 @@
 const path = require(`path`)
-const CleanWebpackPlugin = require(`clean-webpack-plugin`)
+const { CleanWebpackPlugin } = require(`clean-webpack-plugin`)
 
 const commonPublicPath = `/dist/`
 const vendorsBundleName = `vendors`
@@ -11,6 +11,7 @@ module.exports = {
 
   plugins: [
     new CleanWebpackPlugin({
+      verbose: true,
       cleanOnceBeforeBuildPatterns: `dist`
     })
   ],
@@ -18,10 +19,12 @@ module.exports = {
   output: {
     library: `[name]`,
     filename: `[name].bundle.js`,
-    publicPath: commonPublicPath
+    publicPath: commonPublicPath,
+    devtoolNamespace: `firefox`
   },
 
   resolve: {
+    // These aliases are helpful if you integrate other components which use React or styled-components
     alias: {
       "react": path.resolve(`./node_modules/react`),
       "react-dom": path.resolve(`./node_modules/react-dom`),

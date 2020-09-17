@@ -1,14 +1,17 @@
 {
   "name": "expression-atlas-my-package",
   "version": "0.0.1",
+  "publishConfig": {
+    "access": "public"
+  },
   "description": "My package does some neat things",
   "main": "lib/index.js",
   "scripts": {
-    "prepack": "rm -rf lib && babel src -d lib --copy-files",
+    "prepare": "rm -rf lib && babel src -d lib --copy-files",
     "test": "jest",
     "posttest": "jest --coverage --coverageReporters=text-lcov | coveralls",
-    "postversion": "npm publish",
-    "postpublish": "git push && git push --tags"
+    "_postversion": "npm publish",
+    "_postpublish": "git push && git push --tags"
   },
   "jest": {
     "setupFilesAfterEnv": [
@@ -37,32 +40,32 @@
   },
   "dependencies": {
     "prop-types": "^15.7.2",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "styled-components": "^4.2.0",
-    "urijs": "^1.19.1"
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "styled-components": "^5.2.0",
+    "urijs": "^1.19.2"
   },
   "devDependencies": {
-    "@babel/cli": "^7.4.3",
-    "@babel/core": "^7.4.3",
-    "@babel/polyfill": "^7.4.3",
-    "@babel/preset-env": "^7.4.3",
-    "@babel/preset-react": "^7.0.0",
-    "babel-loader": "^8.0.5",
-    "clean-webpack-plugin": "^2.0.1",
-    "coveralls": "^3.0.3",
-    "enzyme": "^3.9.0",
-    "enzyme-adapter-react-16": "^1.12.1",
-    "eslint": "^5.16.0",
+    "@babel/cli": "^7.11.6",
+    "@babel/core": "^7.11.6",
+    "@babel/polyfill": "^7.11.5",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-react": "^7.10.4",
+    "babel-loader": "^8.1.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "coveralls": "^3.1.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.4",
+    "eslint": "^7.9.0",
     "eslint-config-gene-expression": "^0.5.0",
-    "fetch-mock": "^7.3.1",
-    "jest": "^24.7.1",
-    "jest-environment-enzyme": "^7.0.2",
-    "jest-enzyme": "^7.0.2",
-    "node-fetch": "^2.3.0",
-    "react-test-renderer": "^16.8.6",
-    "webpack": "^4.30.0",
-    "webpack-cli": "^3.3.0",
-    "webpack-dev-server": "^3.3.1"
+    "fetch-mock": "^9.10.7",
+    "jest": "^26.4.2",
+    "jest-environment-enzyme": "^7.1.2",
+    "jest-enzyme": "^7.1.2",
+    "node-fetch": "^2.6.1",
+    "react-test-renderer": "^16.13.1",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
   }
 }
